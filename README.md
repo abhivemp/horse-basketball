@@ -10,4 +10,4 @@ To make my code implementation easier, I have designed a circular singly linked 
 
 This section will be updated as the project progress.
 
-Currently designing the data structure. Built the add() method. Currently debugging print and remove.
+Currently designing the data structure. Built the `add()` method. Currently debugging `print()` and `remove()`.
