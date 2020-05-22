@@ -8,6 +8,4 @@ To make my code implementation easier, I have designed a circular singly linked 
 
 ## UPDATES 
 
-This section will be updated as the project progress.
-
-Currently designing the data structure. Built the `add()` method. Currently debugging `print()` and `remove()`.
+Please check the (issues) [https://github.com/abhivemp/horse-basketball/issues] tab 
