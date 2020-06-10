@@ -21,10 +21,12 @@ public class List {
 
     public Node headPtr;
     public Node tailPtr;
+    public int count;
 
     public List() {
-        headPtr = null;
-        tailPtr = null;
+        this.headPtr = null;
+        this.tailPtr = null;
+        this.count = 0;
     }
 
 
@@ -41,22 +43,68 @@ public class List {
             tailPtr = temp;
             tailPtr.next = headPtr;
         }
+        count++;
     }
 
     public void remove(int data) {
+        Node val = search(data);
+        if(val == null) {
+            System.out.println("Can't remove what isn't there!");
+        } else {
+            Node temp = headPtr, prev = headPtr;
+
+            do {
+                if(temp == val) {
+                    break;
+                }
+                prev = temp;
+                temp = temp.next;
+            } while(temp != headPtr);
         
+            if(temp == headPtr) {
+                headPtr = temp.next;
+                tailPtr.next = headPtr;
+            } else if(temp == tailPtr) {
+                tailPtr = prev;
+                tailPtr.next = headPtr;
+            } else {
+                prev.next = temp.next;
+                temp.next = null;
+            }
+            count--;
+        }
+
     }
     /* displays the list */
     public void print() {
         
         Node temp = headPtr;
+        if(count == 0) {
+            System.out.println("List empty");
+            return;
+        } else if(count == 1) {
+            System.out.println(headPtr.data);
+            return;
+        }
+        
         do {
             System.out.println(temp.data);
             temp = temp.next;
         } while(temp != headPtr);
     }
 
-    
+    public Node search(int data) {
+        Node temp = headPtr;
+        Node val = null;
+        do {
+            if(temp.data == data) {
+                val = temp;
+            }
+            temp = temp.next;
+        } while(temp != headPtr);
+
+        return val;
+    }
 
 }
 
