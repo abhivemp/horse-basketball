@@ -8,4 +8,4 @@ To make my code implementation easier, I have designed a circular singly linked 
 
 ## UPDATES 
 
-Please check the (issues) [https://github.com/abhivemp/horse-basketball/issues] tab 
+Please check the [issues](https://github.com/abhivemp/horse-basketball/issues) tab 
