@@ -1,4 +1,8 @@
+
+
 /* List class (in the name) */
+
+package CLL;
 
 public class List {
 
@@ -12,6 +16,7 @@ public class List {
     */ 
     class Node {
 
+        public String name;
         public int data; 
         public Node next;
         public boolean isTail;
@@ -24,6 +29,7 @@ public class List {
     public int count;
 
     public List() {
+        
         this.headPtr = null;
         this.tailPtr = null;
         this.count = 0;
@@ -31,9 +37,11 @@ public class List {
 
 
     /* Inserts the node at the end of the list */
-    public void insert(int data) {
+    public void insert(int data, String n) {
+
         Node temp = new Node();
         temp.data = data;
+        temp.name = n;
 
         if(headPtr == null) {
             headPtr = temp;
@@ -46,8 +54,10 @@ public class List {
         count++;
     }
 
-    public void remove(int data) {
-        Node val = search(data);
+    /* Remove the player from the list */
+    public void remove(String n) {
+
+        Node val = search(n);
         if(val == null) {
             System.out.println("Can't remove what isn't there!");
         } else {
@@ -75,7 +85,7 @@ public class List {
         }
 
     }
-    /* displays the list */
+    /* displays the list of players */
     public void print() {
         
         Node temp = headPtr;
@@ -83,27 +93,29 @@ public class List {
             System.out.println("List empty");
             return;
         } else if(count == 1) {
-            System.out.println(headPtr.data);
+            System.out.println(headPtr.name + " ==> " +headPtr.data);
             return;
         }
-        
         do {
-            System.out.println(temp.data);
+            System.out.println(temp.name + "==>" + temp.data);
             temp = temp.next;
         } while(temp != headPtr);
     }
 
-    public Node search(int data) {
+    /* Search for the following player in list */
+    public Node search(String n) {
+
         Node temp = headPtr;
         Node val = null;
         do {
-            if(temp.data == data) {
+            if(temp.name.equals(n)) {
                 val = temp;
             }
             temp = temp.next;
         } while(temp != headPtr);
 
         return val;
+
     }
 
 }

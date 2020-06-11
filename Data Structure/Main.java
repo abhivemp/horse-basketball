@@ -4,22 +4,22 @@ public class Main {
 
     
         List test = new List();
-        test.insert(0);
-        test.insert(120);
-        test.insert(144);
+        test.insert(0, "Abhijit");
+        test.insert(120, "Surya");
+        test.insert(144, "Venkat");
         test.print();
 
         System.out.println("--------");
-        test.remove(144);
+        test.remove("Abhijit");
         test.print();
 
 
         System.out.println("--------");
-        test.remove(120);
+        test.remove("Surya");
         test.print();
 
         System.out.println("--------");
-        test.remove(0);
+        test.remove("Venkat");
         test.print();
        
     }
