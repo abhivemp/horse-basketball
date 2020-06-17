@@ -4,6 +4,8 @@
 
 package CLL;
 
+
+
 public class List {
 
     
@@ -17,9 +19,16 @@ public class List {
     class Node {
 
         public String name;
-        public int data; 
+        public int data;
+        public String score; 
         public Node next;
         public boolean isTail;
+
+        public Node() {
+          this.data = 0;
+          this.score = "";
+          this.name = "";  
+        }
 
 
     }
@@ -115,6 +124,34 @@ public class List {
         } while(temp != headPtr);
 
         return val;
+
+    }
+
+    public void addLetter(Node x) {
+        char inp;
+
+        switch((x.score).charAt(x.score.length() - 1)) {
+            case Character.MIN_VALUE:
+                x.score += 'H';
+                break;
+            case 'H':
+                x.score += 'O';
+                break;
+            case 'O':
+                x.score += 'R';
+                break;
+            case 'R':
+                x.score += 'S';
+                break;
+            case 'S':
+                x.score += 'E';
+                break;
+            
+            default:
+                System.out.println("HORSE! " + x.name + " is out!! ");
+                this.remove(x.name);
+            
+        }
 
     }
 
